@@ -1,0 +1,28 @@
+# Python
+__pycache__/
+*.pyc
+.venv/
+.pytest_cache/
+
+# macOS
+.DS_Store
+
+# Claude Code local state
+.claude/
+
+# Datasets / corpora / model artifacts (re-downloadable, see scripts/)
+/corpus/
+/spider/
+/data/
+/checkpoints/
+/results/
+/wandb/
+
+# Paper PDFs (re-downloadable from arXiv; see references/papers/INDEX.md)
+references/papers/*/*.pdf
+
+# Scratch
+*.t2sql
+
+# Paper: track source (main.tex, *.bib, *.sty, PAPER.md), ignore LaTeX build artifacts
+paper/

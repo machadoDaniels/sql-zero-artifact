@@ -1,0 +1,34 @@
+# T2SQL adaptation: single-shot rollouts (no tools/multi-turn), longer prompts
+# because the solver/challenger prompts embed the full database schema
+# (DDL + sample rows). See docs/DECISOES_ARQUITETURA.md §5.
+hydra:
+  searchpath:
+    - file://verl/trainer/config
+
+defaults:
+  - ppo_trainer
+  - _self_
+
+data:
+  max_prompt_length: 4096
+  max_response_length: 1536
+  # Alguns schemas do Spider train passam de 3k tokens; dropar em vez de crashar.
+  filter_overlong_prompts: True
+  train_batch_size: 256
+  return_raw_chat: True
+  shuffle: False
+
+actor_rollout_ref:
+  hybrid_engine: True
+  rollout:
+    name: sglang
+    multi_turn:
+      enable: False
+
+# Defaults p/ o reward custom do challenger (sobrescritos via CLI no
+# t2sql_challenger.sh); precisam existir aqui p/ o Hydra aceitar overrides.
+custom_reward_function:
+  reward_kwargs:
+    model_name: null
+    base_url: null
+    reward_rollout_n: 5
