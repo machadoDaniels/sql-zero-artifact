@@ -13,7 +13,6 @@ __pycache__/
 # Datasets / corpora / model artifacts (re-downloadable, see scripts/)
 /corpus/
 /spider/
-/data/
 /checkpoints/
 /results/
 /wandb/

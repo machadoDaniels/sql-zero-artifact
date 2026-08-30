@@ -23,6 +23,7 @@ Paths are relative to the repository root.
 | Optimizer settings, group sizes, temperatures, token budgets | `config/t2sql_grpo.yaml`, `t2sql_solver.sh`, `t2sql_challenger.sh` |
 | Solver: batch 256, group 8, one epoch → 78 updates on 20,000 pairs | `t2sql_solver.sh` |
 | Challenger: batch 256, `rollout.n = 1`, `reward_rollout_n = 5` | `t2sql_challenger.sh` |
+| Challenger-generated training sets, 20,000 pairs per reported run | `data/` (see `data/README.md`) |
 | Database gate — 64 of BIRD-train's 69 databases | `bird/train_dbs_keep.txt`, `bird/census_train.csv`, `bird/census_recheck_2026-07-28.csv`, `scripts/census_recheck.py` |
 
 ## Reported runs
@@ -62,6 +63,7 @@ and are not used to produce any number in this paper.
 
 - The W&B run histories themselves are not committed here; the export and plotting
   scripts are, and require a `WANDB_API_KEY` for the project.
-- Model checkpoints are omitted to preserve anonymity.
+- Model checkpoints are omitted: they exceed the hosting limit and cannot be released
+  anonymously. They will accompany the camera-ready version.
 - Per-run result tables and internal notes are omitted; the paper reports the
   numbers they contain.
