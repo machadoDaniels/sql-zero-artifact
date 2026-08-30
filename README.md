@@ -20,7 +20,6 @@ pointer in the paper to the file here that backs it.
 | `bird/` | the training-database gate (64 of BIRD-train's 69) |
 | `scripts/` | one launcher per reported run, plus the analysis scripts |
 | `tests/` | unit tests for the rewards, the masking and the evaluators |
-| `docs/` | run-by-run result tables under both evaluation protocols |
 
 `verl/` is a vendored fork of the verl trainer; only `verl/custom_reward/` is
 specific to this work.

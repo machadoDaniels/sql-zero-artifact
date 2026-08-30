@@ -57,11 +57,11 @@ and are not used to produce any number in this paper.
 | `k`-histograms and the hard-yet-solvable band | `scripts/score_gen_k.py`; `k_hist` logging in `verl/custom_reward/t2sql_reward.py` |
 | Training-dynamics histories, including interrupted runs | `scripts/export_wandb_training_dynamics.py`, `scripts/plot_wandb_training_dynamics.py` |
 | Evaluation harness and the two protocols | `t2sql_baseline.sh`, `scripts/eval_spider.py` |
-| Per-model scores under both protocols | `docs/RESULTADOS.csv`, `docs/evals_omnisql_pipeline.csv`, `docs/AVALIACAO_OFICIAL.md` |
 
 ## Known gaps
 
 - The W&B run histories themselves are not committed here; the export and plotting
   scripts are, and require a `WANDB_API_KEY` for the project.
 - Model checkpoints are omitted to preserve anonymity.
-- The internal notes under `docs/` are written in Portuguese.
+- Per-run result tables and internal notes are omitted; the paper reports the
+  numbers they contain.
