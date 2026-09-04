@@ -19,6 +19,7 @@ pointer in the paper to the file here that backs it.
 | `config/` | trainer configuration |
 | `bird/` | the training-database gate (64 of BIRD-train's 69) |
 | `scripts/` | one launcher per reported run, plus the analysis scripts |
+| `scripts/chain/` | the chained spiral: challenger and solver of iteration N start from those of N-1 |
 | `tests/` | unit tests for the rewards, the masking and the evaluators |
 
 `verl/` is a vendored fork of the verl trainer; only `verl/custom_reward/` is
@@ -27,8 +28,15 @@ specific to this work.
 ## Reproducing a spiral iteration
 
 Each iteration runs challenger training, generation with execution filtering and
-template deduplication, then solver training, and each role starts from the base
-checkpoint. `MANIFEST.md` names the launcher for every reported row.
+template deduplication, then solver training. Iteration 1 starts both roles from the
+base checkpoint; from iteration 2 on each role inherits the weights of its counterpart
+in the previous turn, which `scripts/chain/submit_chain.sh` orchestrates end to end:
+
+```
+bash scripts/chain/submit_chain.sh 3b     # or 7b
+```
+
+`MANIFEST.md` names the launcher for every reported row.
 
 ## Data
 

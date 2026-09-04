@@ -14,8 +14,15 @@ __pycache__/
 /corpus/
 /spider/
 /checkpoints/
-/results/
 /wandb/
+
+# results/: only the released per-query predictions, nothing else
+/results/*
+!/results/README.md
+!/results/*.gz
+!/results/pipe_omnisql/
+/results/pipe_omnisql/*
+!/results/pipe_omnisql/*.gz
 
 # Paper PDFs (re-downloadable from arXiv; see references/papers/INDEX.md)
 references/papers/*/*.pdf

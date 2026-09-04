@@ -22,7 +22,7 @@ from typing import Any
 import wandb
 
 ROOT = Path(__file__).resolve().parents[1]
-DEFAULT_PROJECT = "danielmachado-ANON-LAB/dr-zero-t2sql"
+DEFAULT_PROJECT = "ANON-ENTITY/dr-zero-t2sql"
 TARGET_METRICS = (
     "critic/score/mean",
     "challenger/difficulty_eligible",
